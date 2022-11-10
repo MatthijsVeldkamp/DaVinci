@@ -1,0 +1,22 @@
+from RobotArm import RobotArm
+robotArm = RobotArm('exercise 10')
+robotArm.grab()
+for i in range(0,5):
+    robotArm.moveRight()
+robotArm.drop()
+for i in range(0,2):
+    robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveRight()
+robotArm.grab()
+robotArm.moveLeft()
+robotArm.moveLeft()
+robotArm.drop()
+robotArm.wait()
