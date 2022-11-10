@@ -2,10 +2,10 @@ import random
 import os
 import time
 os.system("cls")
-score = int(0)
+score = 0
 randomgetal = random.randint(1,1000)
-ronde = int(1)
-aantalkeer = int(0)
+ronde = 1
+aantalkeer = 0
 input1 = ("x")
 stop = False
 print("------------------------------------")
@@ -23,15 +23,16 @@ while True:
     try:
         os.system("cls")
         while aantalkeer < 11 and score < 20 and stop == False:
-            print("Ronde: "+str(ronde)+"\nScore: "+str(score)+"\nAantal keer geraden: "+str(aantalkeer)+"\nVorige gok: "+str(input1))
+            print("Ronde: "+str(ronde)+"\nScore: "+str(score)+"\nZetten "+str(aantalkeer)+"/10"+"\nVorige gok: "+str(input1))
+            aantalkeer += 1
             input1 = input("Raad het getal van 1 tot 1000\nU kunt ook stop typen om te stoppen.\n\n\n\n\n? ")
-            
             if input1.lower() == ("stop"):
                 stop = True
                 os.system("cls")
                 print("Doeg :)")
                 time.sleep(1)
             elif input1.lower() == ("cheat"):
+                aantalkeer -= 1
                 os.system("cls")
                 print(randomgetal)
                 time.sleep(2)
@@ -43,13 +44,15 @@ while True:
                 verschil = str(verschil)
                 verschil = verschil.replace("-", "")
                 verschil = int(verschil)
-                
                 if verschil == (0):
+                    if aantalkeer == 1:
+                        pass
+                    aantalkeer -= 1
                     print("------------------------------------")
                     print("|                                  |")
                     print("|         Goed geraden!            |")
                     print("|                                  |")
-                    print("|  Geraden in: "+str(aantalkeer)+" zetten.     ")
+                    print("|  Geraden in: "+str(aantalkeer)+" zet(ten).     ")
                     print("|                                  |")
                     print("------------------------------------")
                     score += 1
@@ -57,7 +60,7 @@ while True:
                     if keuze.lower() == ("y"):
                         aantalkeer = int(0)
                         randomgetal = random.randint(1,1000)
-                        ronde += int(1)
+                        ronde += 1
                         input1 = ("x")
                         stop = False
                         os.system("cls")
@@ -75,7 +78,6 @@ while True:
                     print("Je bent warm.")
                     time.sleep(1)
                     os.system("cls")
-                    aantalkeer += 1
                     continue
                 elif verschil <= 20:
                     if int(randomgetal) < int(input1):
@@ -85,7 +87,6 @@ while True:
                     print("Je bent heel erg warm.")
                     time.sleep(1)
                     os.system("cls")
-                    aantalkeer += 1
                     continue
                 else:
                     if int(randomgetal) < int(input1):
@@ -93,7 +94,6 @@ while True:
                     else:
                         print("Hoger!")
                     time.sleep(1)
-                    aantalkeer += 1
                     os.system("cls")
                     continue
         else:
@@ -110,7 +110,7 @@ while True:
                 time.sleep(2)
                 keuze = input("Wilt u nog een keer?\nY/N\n? ")
                 if keuze.lower() == ("y"):
-                    aantalkeer = int(0)
+                    aantalkeer = 0
                     randomgetal = random.randint(1,1000)
                     ronde += int(1)
                     input1 = ("x")
@@ -125,4 +125,5 @@ while True:
             
     except:
         print("Type A.U.B alleen nummers of stop.")
+        input1 = "x"
         time.sleep(2)
