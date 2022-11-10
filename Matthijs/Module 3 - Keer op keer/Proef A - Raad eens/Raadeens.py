@@ -21,7 +21,7 @@ time.sleep(5)
 os.system("cls")
 while True:    
     try:
-        while aantalkeer < 10 and score < 20 and stop == False:
+        while aantalkeer < 11 and score < 20 and stop == False:
             print("Ronde: "+str(ronde)+"\nScore: "+str(score)+"\nAantal keer geraden: "+str(aantalkeer)+"\nVorige gok: "+str(input1))
             print(randomgetal)
             input1 = input("Raad het getal van 1 tot 1000\nU kunt ook stop typen om te stoppen.\n\n\n\n\n? ")
@@ -103,6 +103,7 @@ while True:
                     ronde += int(1)
                     input1 = ("x")
                     os.system("cls")
+                    score = 0
                     continue
                 else:
                     os.system("cls")
