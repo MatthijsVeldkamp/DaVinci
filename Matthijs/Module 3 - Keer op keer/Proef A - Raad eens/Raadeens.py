@@ -21,13 +21,23 @@ time.sleep(5)
 os.system("cls")
 while True:    
     try:
+        os.system("cls")
         while aantalkeer < 11 and score < 20 and stop == False:
             print("Ronde: "+str(ronde)+"\nScore: "+str(score)+"\nAantal keer geraden: "+str(aantalkeer)+"\nVorige gok: "+str(input1))
-            print(randomgetal)
             input1 = input("Raad het getal van 1 tot 1000\nU kunt ook stop typen om te stoppen.\n\n\n\n\n? ")
             
             if input1.lower() == ("stop"):
-                stop = True   
+                stop = True
+                os.system("cls")
+                print("Doeg :)")
+                time.sleep(1)
+            elif input1.lower() == ("cheat"):
+                os.system("cls")
+                print(randomgetal)
+                time.sleep(2)
+                input1 = ("x")
+                time.sleep(2)
+                os.system("cls")   
             else:
                 verschil = int(input1) - int(randomgetal)
                 verschil = str(verschil)
@@ -54,6 +64,8 @@ while True:
                         continue
                     else:
                         os.system("cls")
+                        print("Doeg :)")
+                        time.sleep(1)
                         stop = True
                 elif verschil <= 50 and verschil > 20:
                     if int(randomgetal) < int(input1):
@@ -107,6 +119,8 @@ while True:
                     continue
                 else:
                     os.system("cls")
+                    print("Doeg :)")
+                    time.sleep(1)
                     break
             
     except:
