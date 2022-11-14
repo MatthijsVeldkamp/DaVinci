@@ -46,8 +46,9 @@ while True:
                 verschil = int(verschil)
                 if verschil == (0):
                     if aantalkeer == 1:
-                        pass
-                    aantalkeer -= 1
+                        aantalkeer = 1
+                    else:
+                        aantalkeer -= 1
                     print("------------------------------------")
                     print("|                                  |")
                     print("|         Goed geraden!            |")
