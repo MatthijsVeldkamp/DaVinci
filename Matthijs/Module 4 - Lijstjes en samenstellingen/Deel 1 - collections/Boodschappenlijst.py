@@ -4,7 +4,8 @@ producten = []
 while True:
     os.system("cls")
     product = input("Welk product wilt u toevoegen?\n? ")
-    if (product) in producten:
+    nummer = producten.count(product)
+    if nummer > 1:
         os.system("cls")
         print("Dat product staat al in de lijst!")
         time.sleep(2)
