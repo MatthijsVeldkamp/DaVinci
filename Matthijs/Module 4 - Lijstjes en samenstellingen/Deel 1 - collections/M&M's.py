@@ -1,8 +1,9 @@
 import random
 import time
 import os
+
 os.system("cls")
-kleuren = ("oranje","blauw","groen","bruin")
+kleuren = ("oranje", "blauw", "groen", "bruin")
 zak = []
 print("Hoeveel M&M's wilt u?")
 try:
@@ -13,7 +14,7 @@ try:
     zak = zak.replace("[", "")
     zak = zak.replace("]", "")
     zak = zak.replace("'", "")
-    print("In de zak zitten M&M's met de kleuren: "+(zak))
+    print("In de zak zitten M&M's met de kleuren: " + (zak))
 except:
     os.system("cls")
     print("Vul alleen nummers in!")

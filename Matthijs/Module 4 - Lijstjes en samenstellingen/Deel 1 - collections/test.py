@@ -1,31 +1,32 @@
-import time
 import os
-lijst = []
-aantal = []
-a = 0
+import time
+boodschappenlijstje = {
+}
 while True:
-    opnieuw = True
     os.system("cls")
-    input1 = input("Welk product wilt u toevoegen?\n? ")
-    lijst.append(input1)
-    nummer = lijst.count(input1)
-    if nummer > 1:
-        os.system("cls")
-        print("Dat product staat al in de lijst!")
-        time.sleep(1.5)
-        continue
+    product = input("Wat wilt u toevoegen? ")
+    productlower = product.lower()
+    if productlower not in boodschappenlijstje:
+        hoeveel = input("Hoeveel keer? ")
+        boodschappenlijstje[productlower] = hoeveel
+        input1 = input("Wilt u nog wat toevoegen? ")
+        if input1.lower() == ("y") or input1.lower() == ("ja") or input1.lower() == ("yes") or input1.lower() == ("j"):
+            continue
+        elif input1.lower() == ("n") or input1.lower() == ("nee") or input1.lower() == ("no"):
+            os.system("cls")
+            print("Boodschappenlijstje:\n")
+            for key,value in boodschappenlijstje.items():
+                print(key+": "+value+"x")
+            break
     else:
-
-            input2 = input("Wilt u nog een product toevoegen? Y/N\n? ")
-            if input2.lower() == ("n"):
-                os.system("cls")
-                print(lijst)
-                opnieuw = False
-                break
-            elif input2.lower() == ("y"):
-                opnieuw = False
-            else:
-                os.system("cls")
-                print("Dat was geen optie!")
-                opnieuw = True
-                time.sleep(2)
+        hoeveel = input("Hoeveel keer? ")
+        boodschappenlijstje[productlower] = hoeveel
+        input1 = input("Wilt u nog wat toSevoegen? ")
+        if input1.lower() == ("y") or input1.lower() == ("ja") or input1.lower() == ("yes") or input1.lower() == ("j"):
+            continue
+        elif input1.lower() == ("n") or input1.lower() == ("nee") or input1.lower() == ("no"):
+            os.system("cls")
+            print("Boodschappenlijstje:\n")
+            for key,value in boodschappenlijstje.items():
+                print(key+": "+value+"x")
+            break
