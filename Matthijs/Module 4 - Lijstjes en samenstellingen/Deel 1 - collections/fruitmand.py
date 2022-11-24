@@ -34,4 +34,3 @@ fruitmand = [{
     'color' : 'yellow',
     'round' : True
 }]
-print(fruitmand)
