@@ -20,7 +20,4 @@ for x in range(len(fruitmand)):
         gewicht = fruitmand[x]["weight"]
         kleur = fruitmand[x]["color"]
 gewicht = gewicht / 1000
-
-
-
 print("De",langste,"(",letters,"letters ) heeft een",vertaling[kleur],"kleur en een gewicht van",gewicht,"Kg." )
