@@ -10,5 +10,8 @@ while y == True:
         continue
     for i in range(aantal):
         randomgetal = random.randint(1,x)
-        print(fruitmand[randomgetal]['name'])
-        y = False
+        try:
+            print(fruitmand[randomgetal]['name'])
+            y = False
+        except:
+            pass
