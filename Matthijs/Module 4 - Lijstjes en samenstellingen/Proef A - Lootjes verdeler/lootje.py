@@ -1,27 +1,24 @@
 import time
 import os
 import random
-i = 0
-a = 0
-b = 0
 namen = []
 lootjes = []
-naamloop = True
+loop = True
 while True:
     os.system('cls')
-    while naamloop == True:
+    while loop == True:
         try:
             aantal = int(input ("Wat is het aantal deelnemers? "))
             if aantal >=3:
-                naamloop = False
+                loop = False
             else:
                 print("A.u.b een minimum van 3 deelnemers!")
                 time.sleep(2)
-                naamloop = True
+                loop = True
         except:
-            print ("Dat is een woord! geen cijfer")
+            print ("A.u.b alleen cijfers!!")
             time.sleep(2)
-            naamloop = True
+            loop = True
     hoeveelheidloop = aantal
     while hoeveelheidloop >0:
         os.system("cls")
@@ -39,16 +36,17 @@ while True:
     print(namen)
     input1 = input("Klopt dit? ")
     if input1.lower() == ("n"):
-        naamloop = True
+        loop = True
         namen.clear()
         continue
     else:
+        os.system("cls")
         laasteinlijst = len(namen)
         laasteinlijst -= 1
         b = 0
         print("Lootjes worden gegenereerd...")
         random.shuffle(namen)
-        time.sleep(1.25)
+        time.sleep(0.5)
         while b < laasteinlijst:
             lootje = (namen[b],"heeft",namen[b+1])
             lootjes.append(lootje)
@@ -61,7 +59,4 @@ while True:
         lootjes = lootjes.replace("]", "")
         lootjes = lootjes.replace("'", "")
         print (lootjes)
-        print("Druk op Ctrl + C om te stoppen.")
-        while True:
-            time.sleep(1)
-            continue
+        break
