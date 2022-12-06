@@ -14,11 +14,9 @@ while True:
             else:
                 print("A.u.b een minimum van 3 deelnemers!")
                 time.sleep(2)
-                loop = True
         except:
             print ("A.u.b alleen cijfers!!")
             time.sleep(2)
-            loop = True
     hoeveelheidloop = aantal
     while hoeveelheidloop >0:
         os.system("cls")
