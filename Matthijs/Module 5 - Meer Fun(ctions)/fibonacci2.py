@@ -12,7 +12,13 @@ def factorial(x:int,hoeveel:int,a:int,b:int,som:int):
         b += 1
         factorial(x,hoeveel,a,b,som)
         return (getallen)
-hoeveel = int(input("Hoeveel? "))
+while True:
+    try:
+        hoeveel = int(input("Hoeveel? "))
+        break
+    except:
+        print("Vul A.u.b alleen een getal in!")
+        continue
 a = 0
 b = 1
 som = a+b
