@@ -33,9 +33,9 @@ while opnieuw == True:
     print ("| H) getal halveren                 |")
     print ("|-=+=--=+=--=+=--=+=--=+=--=+=--=+=-|")
 
-    choice = input("Wat wilt u doen? ")
+    choice = input("Wat wilt u doen? ").lower()
     # ------------------------------------------------------- 
-    if choice.lower() == "a":
+    if choice == "a":
         try:
             n1= float(input("Getal 1?  "))
         except:
@@ -53,7 +53,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "b":
+    elif choice == "b":
         try:
             n1= float(input("Getal 1: "))
         except:
@@ -71,7 +71,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "c":
+    elif choice == "c":
         try:
             n1= float(input("Getal 1: "))
         except:
@@ -89,7 +89,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "d":
+    elif choice == "d":
         try:
             n1= float(input("Getal 1: "))
         except:
@@ -107,7 +107,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "e":
+    elif choice == "e":
         try:
             n1= float(input("Welk getal wilt u ophogen? "))
         except:
@@ -120,7 +120,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "f":
+    elif choice == "f":
         try:
             n1= float(input("Welk getal wilt u verlagen? "))
         except:
@@ -133,7 +133,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "g":
+    elif choice == "g":
         try:
             n1= float(input("Welk getal wilt u verdubbelen? "))
         except:
@@ -146,7 +146,7 @@ while opnieuw == True:
         time.sleep(2)
         opnieuw = False
     # ------------------------------------------------------- 
-    elif choice.lower() == "h":
+    elif choice == "h":
         try:
             n1= float(input("Welk getal wilt u halveren? "))
         except:
@@ -177,9 +177,9 @@ while loop == True:
     print ("| H) getal halveren                 |")
     print ("| I) niks (Eindantwoord printen)    |")
     print ("|-=+=--=+=--=+=--=+=--=+=--=+=--=+=-|")
-    choice = input("Wat wilt u doen? ")
+    choice = input("Wat wilt u doen? ").lower()
     # ------------------------------------------------------- 
-    if choice.lower() == "a":#optellen
+    if choice == "a":#optellen
         n1 = totaal
         try:
             n2 = float(input("Hoeveel wilt u erbij doen? "))
@@ -191,7 +191,7 @@ while loop == True:
         print (f"{n1} + {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "b":#aftrekken
+    elif choice == "b":#aftrekken
         n1 = totaal
         try:
             n2 = float(input("Hoeveel wilt u eraf halen? "))
@@ -203,7 +203,7 @@ while loop == True:
         print (f"{n1} - {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "c":#vermenigvuldigen
+    elif choice == "c":#vermenigvuldigen
         n1 = totaal
         try:
             n2 = float(input("Met hoeveel wilt u keren? "))
@@ -215,7 +215,7 @@ while loop == True:
         print (f"{n1} x {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "d":#delen
+    elif choice == "d":#delen
         n1 = totaal
         try:
             n2 = float(input("Met hoeveel wilt u delen? "))
@@ -227,35 +227,35 @@ while loop == True:
         print (f"{n1} : {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "e":#ophogen
+    elif choice == "e":#ophogen
         n1 = totaal
         n2= 1
         totaal = addition(n1, n2)
         print (f"{n1} + {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "f":#verlagen
+    elif choice == "f":#verlagen
         n1 = totaal
         n2 = 1
         totaal = subtraction(n1, n2)
         print (f"{n1} - {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "g":#verdubbelen
+    elif choice == "g":#verdubbelen
         n1 = totaal
         n2= 2
         totaal = multiplication(n1, n2)
         print (f"{n1} x {n2} = {totaal}")
         time.sleep(2)
     # ------------------------------------------------------- 
-    elif choice.lower() == "h":#halveren
+    elif choice == "h":#halveren
         n1 = totaal
         n2 = 2
         totaal = division(n1, n2)
         print (f"{n1} : {n2} = {totaal}")
         time.sleep(2)
     # -------------------------------------------------------
-    elif choice.lower() == ("i"):#niks
+    elif choice == ("i"):#niks
         loop = False
         continue
     else:

@@ -1,15 +1,15 @@
-lijst = []
-def naam_en_leeftijd():
+def naam_en_leeftijd() -> list:
+    lijst = []
     loop = True
     while loop == True:
         naam = input("Naam? ")
         if naam == "stop":
-            return
+            break
         leeftijd = input("Leeftijd? ")
         if leeftijd == "stop":
-            return
+            break
         bijelkaar = {'naam': naam, 'leeftijd' : leeftijd,}
         lijst.append(bijelkaar)
-naam_en_leeftijd()
-for i in range (len(lijst)):
-    print(f"{lijst[i]['naam']} is {lijst[i]['leeftijd']} jaar oud.")
+    return(lijst)
+for person in naam_en_leeftijd():
+    print(f"{person['naam']} is {person['leeftijd']} jaar")
