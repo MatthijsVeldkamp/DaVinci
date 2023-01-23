@@ -1,5 +1,6 @@
 import time
 import os
+from pipje import *
 items = []
 clear = False
 def clear_inventory():
@@ -27,6 +28,7 @@ def end_1():
     print("|                Einde 1 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     print("\033[1;37;40m")
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
@@ -51,6 +53,7 @@ def end_2():
     print("|                Einde 2 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     print("\033[1;37;40m")
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
@@ -75,6 +78,7 @@ def end_3():
     print("|                Einde 3 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     print("\033[1;37;40m")
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
@@ -99,6 +103,7 @@ def end_4():
     print("|                Einde 4 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
         einde = 0
@@ -123,6 +128,7 @@ def end_5():
     print("|                Einde 5 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
         einde = 0
@@ -147,6 +153,7 @@ def end_6():
     print("|                Einde 6 van 6                |")
     print("|                                             |")
     print("-----------------------------------------------")
+    showpip()
     restart = input("Wilt u nog een keer?\nY/N? ")
     if restart.lower() == ("y"):
         einde = 0
@@ -243,6 +250,7 @@ def alles():
             print("Score:",score)
             print("Start:\nStart het spel!\n")
             print("Instructies:\nEen korte uitleg van hoe het spel werkt.\n")
+            print("Pip:\nLaat pip zien :)\n")
             try:
                 print("Wat wilt u doen?")
                 opties = input("? ")
@@ -272,7 +280,8 @@ def alles():
                         continue
                         
                         
-                
+                elif opties.lower() == "pip":
+                    showpip()
                 elif opties.lower() == "start":
                     zaklamp = 0
                     fles = 0
