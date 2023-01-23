@@ -398,6 +398,10 @@ def alles():
                                             fles = 1
                                             time.sleep(1)
                                             items_add("Fles met code 248")
+             
+             
+             
+             
                                             print("De fles is toegevoegd aan uw inventaris.")
                                             time.sleep(4)
                                         elif fles == 1:
