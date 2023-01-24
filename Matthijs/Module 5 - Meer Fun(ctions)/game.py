@@ -250,7 +250,6 @@ def alles():
             print("Score:",score)
             print("Start:\nStart het spel!\n")
             print("Instructies:\nEen korte uitleg van hoe het spel werkt.\n")
-            print("Pip:\nLaat pip zien :)\n")
             try:
                 print("Wat wilt u doen?")
                 opties = input("? ")
