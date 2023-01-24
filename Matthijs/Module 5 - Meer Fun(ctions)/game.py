@@ -11,7 +11,7 @@ def items_add(item):
     items.append(item)
 def items_remove(item):
     items.remove(item)
-def end_1():
+def codenietgoed():
     global einde
     print("\033[1;31;40m")
     print("Onjuiste code!")
@@ -348,7 +348,7 @@ def alles():
                                                 continue
                                         
                                             elif code != "248":
-                                                end_1()
+                                                codenietgoed()
                                                 break
                                                 
                                             else:
@@ -575,7 +575,7 @@ def alles():
                                                     end_4()
                                                     break
                                                 else:
-                                                    end_1()
+                                                    codenietgoed()
                                                     break
                                             elif optie3.lower() == ("items"):
                                                 if len(items) == 0:
