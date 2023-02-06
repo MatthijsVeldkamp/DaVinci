@@ -20,6 +20,10 @@ def division(n1: float, n2: float) -> float:
     totaal = n1 / n2
     return totaal
 # -------------------------------------------------------
+def clear(n1,n2):
+    global totaal
+    totaal = 0
+    return totaal
 while opnieuw == True:
     os.system("cls")
     print ("|-=+=--=+=--=+=--=+=--=+=--=+=--=+=-|")
@@ -176,6 +180,7 @@ while loop == True:
     print ("| G) getal verdubbelen              |")
     print ("| H) getal halveren                 |")
     print ("| I) niks (Eindantwoord printen)    |")
+    print ("| J) antwoord clearen               |")
     print ("|-=+=--=+=--=+=--=+=--=+=--=+=--=+=-|")
     choice = input("Wat wilt u doen? ").lower()
     # ------------------------------------------------------- 
@@ -258,6 +263,8 @@ while loop == True:
     elif choice == ("i"):#niks
         loop = False
         continue
+    elif choice == ("j"):#clearen
+        clear(n1,n2)
     else:
         print("Dat was geen optie!")
         time.sleep(2)
