@@ -1,7 +1,11 @@
 import time
 import math
 from termcolor import colored
-from data import *
+from data import JOURNEY_IN_DAYS
+from data import COST_FOOD_HORSE_COPPER_PER_DAY
+from data import COST_FOOD_HUMAN_COPPER_PER_DAY
+from data import COST_TENT_GOLD_PER_WEEK
+from data import COST_HORSE_SILVER_PER_DAY
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
@@ -38,12 +42,12 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(list:list, key:str, value:any) -> list:
-    return [item for item in list if item[key] == value]
+    return[item for item in list if item[key] == value]
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs (people,"adventuring",True)
 
 def getShareWithFriends(friends:list) -> int:
-    return getFromListByKeyIs (friends,"sharewith",True)
+    return getFromListByKeyIs (friends,"shareWith",True)
 
 def getAdventuringFriends(friends:list) -> list:
     return getFromListByKeyIs(friends, "adventuring", True)
