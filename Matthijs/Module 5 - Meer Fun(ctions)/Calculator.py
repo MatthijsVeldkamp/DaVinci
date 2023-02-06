@@ -17,8 +17,14 @@ def multiplication(n1: float, n2: float) -> float:
     return totaal
 # -------------------------------------------------------
 def division(n1: float, n2: float) -> float:
-    totaal = n1 / n2
-    return totaal
+    try:
+        totaal = n1 / n2
+    except:
+        print("Kan niet door 0 delen!")
+    try:
+        return totaal
+    except:
+        pass
 # -------------------------------------------------------
 def clear(n1,n2):
     global totaal
