@@ -173,13 +173,13 @@ if adventureStarted:
     print_chapter(chapterNr, 'THE JOURNEY')
 
     if len(mainCharacter['name']) == 0:
-        print_colorvars('Maar als onbekende avonturier zonder geld kom je nerges ... ')
+        print_colorvars('Maar als onbekende avonturier zonder geld kom je nergens ... ')
     elif JOURNEY_IN_DAYS == 0:
         print_colorvars('Een reis zonder het bestuderen van de kaart bleek toch geen goed idee, ineens zag {} daar weer het beginpunt en kon er opnieuw begonnen worden.', [mainCharacter['name']])
     elif journeyFoodCost == None or journeyFoodCost == 0:
         print_colorvars('Reizen zonder eten doet {} geen goed en hij keerde al snel terug naar huis.', [mainCharacter['name']])
     elif len(party) == 1:
-        print_colorvars('Al gouw kwam {} er achter dat een avontuur in je eentje niet leuk is en keerde terug naar huis.', [mainCharacter['name']])
+        print_colorvars('Al gauw kwam {} er achter dat een avontuur in je eentje niet leuk is en keerde terug naar huis.', [mainCharacter['name']])
     elif rentStuff == False:
         adventurersText = ifOne(len(party), 'avonturier', 'avonturiers')
         horseText       = ifOne(horses + 1, 'paard',  'paarden', '1')
@@ -192,7 +192,7 @@ if adventureStarted:
         investorsText = ifOne(len(investorsAdventuring), 'investeerder', 'investeerders', '')
         print_colorvars('Het blijkt echter geen goed idee om met de {} iedere nacht in een tent slapen, dus ze keren terug naar huis om een nieuw plan te maken.', [investorsText])
     else:
-        print_colorvars('De reis voorloop spoedig voor het {}-tal en ze komen op tijd aan bij de bestemming.', [len(party)])
+        print_colorvars('De reis verloopt spoedig voor het {}-tal en ze komen op tijd aan bij de bestemming.', [len(party)])
         
         if len(treasure) == 0:
             print_colorvars('Helaas blijkt de schat al te zijn opgegraven door iemand anders en keren ze met lege handen terug naar huis.')
@@ -218,7 +218,7 @@ if adventureStarted:
             print_colorvars('Als ze de kist open maken vinden ze {}.', [treasureItems])
             print_colorvars('Er wordt uitgerekend dat de schat een waarde heeft van {} goud.', [treasureValue])
             print_colorvars('Samen met al het {} goud is dat {} goud om te verdelen.', [leftoverGold, totalGold])
-            print_colorvars('Iedereen kreeg eerst zijn geinvesteerde goud terug en zo bleef er nog {} goud winst over.', [profitGold])
+            print_colorvars('Iedereen kreeg eerst zijn geïnvesteerde goud terug en zo bleef er nog {} goud winst over.', [profitGold])
       
             if profitGold <= 0:
                 print_colorvars('Helaas is er niets overgebleven om te verdelen ... ')
@@ -252,9 +252,9 @@ if adventureStarted:
                     earnings = getEarnigs(profitGold, mainCharacter, friends, investors)
                     personalProfit = earnings[0]['end'] - earnings[0]['start']
                     if earnings != None:
-                        print_colorvars('Dat betekend dat {} eerst {} goud hand en nu {} goud heeft, wat {} goud winst is.', [earnings[0]['name'], earnings[0]['start'], earnings[0]['end'], personalProfit])
+                        print_colorvars('Dat betekent dat {} eerst {} goud hand en nu {} goud heeft, wat {} goud winst is.', [earnings[0]['name'], earnings[0]['start'], earnings[0]['end'], personalProfit])
                     else:
-                        print_colorvars('Dat betekend dat al het goud voor {} is.', [mainCharacter['name']])
+                        print_colorvars('Dat betekent dat al het goud voor {} is.', [mainCharacter['name']])
                     
                 else:
                     if len(investors) > 0:
@@ -265,7 +265,7 @@ if adventureStarted:
                     earnings = getEarnigs(profitGold, mainCharacter, friends, investors)
 
                     if earnings == None:
-                        print_colorvars('Het enige wat nog te doen is, is de balance op maken.')
+                        print_colorvars('Het enige wat nog te doen is, is de balans op maken.')
                     else:
                         chapterNr += 1
                         print_chapter(chapterNr, 'THE BALANCE')
@@ -280,7 +280,7 @@ if adventureStarted:
                 
                         for earning in earnings:
                             personalProfit = round(earning['end'] - earning['start'],2)
-                            print_colorvars('{} had eerst {} goud en heeft nu {} goud, dat betekend {} goud winst.', [earning['name'], earning['start'], earning['end'], personalProfit])
+                            print_colorvars('{} had eerst {} goud en heeft nu {} goud, dat betekent {} goud winst.', [earning['name'], earning['start'], earning['end'], personalProfit])
                     
 nextStep()
 print_title('THE END')

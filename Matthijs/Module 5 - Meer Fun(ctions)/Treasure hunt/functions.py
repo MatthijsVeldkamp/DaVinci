@@ -1,11 +1,7 @@
 import time
 import math
 from termcolor import colored
-from data import JOURNEY_IN_DAYS
-from data import COST_FOOD_HUMAN_COPPER_PER_DAY
-from data import COST_FOOD_HORSE_COPPER_PER_DAY
-from data import COST_TENT_GOLD_PER_WEEK
-from data import COST_HORSE_SILVER_PER_DAY
+from data import *
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
@@ -29,20 +25,20 @@ def getPersonCashInGold(personCash:dict) -> float:
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    peopleammountcopper = people * COST_FOOD_HUMAN_COPPER_PER_DAY
-    peopleammountcopper = peopleammountcopper * JOURNEY_IN_DAYS
-    peopleammountgold = copper2gold(peopleammountcopper)
-    round(peopleammountgold,2)
-    horseammountcopper = horses * COST_FOOD_HORSE_COPPER_PER_DAY
-    horseammountcopper = horseammountcopper * JOURNEY_IN_DAYS
-    horseammountgold = copper2gold(horseammountcopper)
-    round(horseammountgold,2)
-    totaalperdag = horseammountgold + peopleammountgold
+    peopleamountcopper = people * COST_FOOD_HUMAN_COPPER_PER_DAY
+    peopleamountcopper = peopleamountcopper * JOURNEY_IN_DAYS
+    peopleamountgold = copper2gold(peopleamountcopper)
+    round(peopleamountgold,2)
+    horseamountcopper = horses * COST_FOOD_HORSE_COPPER_PER_DAY
+    horseamountcopper = horseamountcopper * JOURNEY_IN_DAYS
+    horseamountgold = copper2gold(horseamountcopper)
+    round(horseamountgold,2)
+    totaalperdag = horseamountgold + peopleamountgold
     return round(totaalperdag,2)
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(list:list, key:str, value:any) -> list:
-    return [item for item in list if item[key]== value]
+    return [item for item in list if item[key] == value]
 def getAdventuringPeople(people:list) -> list:
     return getFromListByKeyIs (people,"adventuring",True)
 
@@ -58,18 +54,35 @@ def getNumberOfHorsesNeeded(people:int) -> int:
     return math.ceil(people/2)
 
 def getNumberOfTentsNeeded(people:int) -> int:
-    pass
+    return math.ceil(people/3)
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
-    pass
-
+    return (horses * silver2gold(COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS) + (tents * (COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS / 7)) )
 ##################### M04.D02.O7 #####################
 
 def getItemsAsText(items:list) -> str:
-    pass
+    nieuwelijst = []
+    for i in range(len(items)):
+        nieuwelijst.append(str(items[i]["amount"]) + str(items[i]["unit"]) + " " + str(items[i]["name"]))
+    nieuwelijst = str(nieuwelijst)
+    nieuwelijst = nieuwelijst.replace("[","")
+    nieuwelijst = nieuwelijst.replace("]","")
+    nieuwelijst = nieuwelijst.replace("'","")
+    return nieuwelijst
 
 def getItemsValueInGold(items:list) -> float:
-    pass
+    totaalaantalgoud = 0
+    for i in range (len(items)):
+        typengeld = (items[i]['price']['type'])
+        if typengeld == 'copper':
+            totaalaantalgoud += copper2gold(items[i]['amount'] * items[i]['price']['amount'])
+        elif typengeld == 'platinum':
+            totaalaantalgoud += platinum2gold(items[i]['amount'] * items[i]['price']['amount'])
+        elif typengeld == 'silver':
+            totaalaantalgoud += silver2gold(items[i]['amount'] * items[i]['price']['amount'])
+        elif typengeld == 'gold':
+            totaalaantalgoud += (items[i]['amount'] * items[i]['price']['amount'])
+    return round(totaalaantalgoud,2)
 
 ##################### M04.D02.O8 #####################
 
