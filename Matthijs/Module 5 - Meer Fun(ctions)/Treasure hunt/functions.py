@@ -9,10 +9,10 @@ from data import COST_HORSE_SILVER_PER_DAY
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    return amount / 10
+    return round(amount / 10 ,2)
 
 def silver2gold(amount:int) -> float:
-    return amount / 5
+    return round(amount / 5 ,2)
 
 def copper2gold(amount:int) -> float:
     return amount / 50
@@ -29,15 +29,15 @@ def getPersonCashInGold(personCash:dict) -> float:
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    peopleamountcopper = people * COST_FOOD_HUMAN_COPPER_PER_DAY
-    peopleamountcopper = peopleamountcopper * JOURNEY_IN_DAYS
-    peopleamountgold = copper2gold(peopleamountcopper)
-    round(peopleamountgold,2)
+    peopleamountCopper = people * COST_FOOD_HUMAN_COPPER_PER_DAY
+    peopleamountCopper = peopleamountCopper * JOURNEY_IN_DAYS
+    peopleamountGold = copper2gold(peopleamountCopper)
+    round(peopleamountGold,2)
     horseamountcopper = horses * COST_FOOD_HORSE_COPPER_PER_DAY
     horseamountcopper = horseamountcopper * JOURNEY_IN_DAYS
     horseamountgold = copper2gold(horseamountcopper)
     round(horseamountgold,2)
-    totaalperdag = horseamountgold + peopleamountgold
+    totaalperdag = horseamountgold + peopleamountGold
     return round(totaalperdag,2)
 ##################### M04.D02.O5 #####################
 
@@ -50,7 +50,11 @@ def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs (friends,"shareWith",True)
 
 def getAdventuringFriends(friends:list) -> list:
-    return getFromListByKeyIs(friends, "adventuring", True)
+    namenlijst = []
+    for i in range (len(friends)):
+        if friends[i]['adventuring'] and friends[i]['shareWith'] == True:
+            namenlijst.append(friends[i])
+    return (namenlijst)
 
 ##################### M04.D02.O6 #####################
 
