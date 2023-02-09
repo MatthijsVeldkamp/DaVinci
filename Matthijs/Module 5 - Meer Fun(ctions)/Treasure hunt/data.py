@@ -1,9 +1,9 @@
+#constants
 JOURNEY_IN_DAYS = 11
 COST_FOOD_HUMAN_COPPER_PER_DAY = 4
 COST_FOOD_HORSE_COPPER_PER_DAY = 3
 COST_TENT_GOLD_PER_WEEK = 3
 COST_HORSE_SILVER_PER_DAY = 5
-
 #data
 mainCharacter = {
     'name' : 'Matthijs',
@@ -153,6 +153,36 @@ adventurerGear = [{
     }
 }]
 
-investors = []
+investors = [{
+    'name' : 'Dwindel',
+    'adventuring' : True,
+    'profitReturn' : 9,
+    'cash' : {
+        'platinum' : 4,
+        'gold' : 5,
+        'silver' : 0,
+        'copper' : 0
+    }
+},{
+    'name' : 'Cipher',
+    'adventuring' : False,
+    'profitReturn' : 6,
+    'cash' : {
+        'platinum' : 2,
+        'gold' : 20,
+        'silver' : 0,
+        'copper' : 0
+    }
+},{
+    'name' : 'Maxxy',
+    'adventuring' : True,
+    'profitReturn' : 12,
+    'cash' : {
+        'platinum' : 8,
+        'gold' : 50,
+        'silver' : 100,
+        'copper' : 0
+    }
+}]
 
 treasure = []

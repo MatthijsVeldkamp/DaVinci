@@ -1,13 +1,36 @@
-friends = [{
-    'name' : 'Jorick',
-    'shareWith' : True,
+from functions import *
+investors = [{
+    'name' : 'Dwindel',
     'adventuring' : True,
+    'profitReturn' : 9,
     'cash' : {
-        'platinum' : 0,
-        'gold' : 9,
-        'silver' : 9,
-        'copper' : 43
+        'platinum' : 4,
+        'gold' : 5,
+        'silver' : 0,
+        'copper' : 0
     }
+},{
+    'name' : 'Cipher',
+    'adventuring' : False,
+    'profitReturn' : 6,
+    'cash' : {
+        'platinum' : 2,
+        'gold' : 20,
+        'silver' : 0,
+        'copper' : 0
+    }
+},{
+    'name' : 'Maxxy',
+    'adventuring' : True,
+    'profitReturn' : 12,
+    'cash' : {
+        'platinum' : 8,
+        'gold' : 50,
+        'silver' : 100,
+        'copper' : 0
+    }
+
+
 }]
 adventurerGear = [{
     'name' : 'Lantaren',
@@ -17,29 +40,68 @@ adventurerGear = [{
         'amount' : 2,
         'type' : 'gold'
     }
+},{
+    'name' : 'Lampenolie',
+    'amount' : 2,
+    'unit' : 'dl',
+    'price' : {
+        'amount' : 13,
+        'type' : 'copper'
+    }
+},{
+    'name' : 'Hengel',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 1,
+        'type' : 'gold'
+    }
+},{
+    'name' : 'Schop',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 2,
+        'type' : 'gold'
+    }
+},{
+    'name' : 'Tinderbox',
+    'amount' : 3,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 8,
+        'type' : 'copper'
+    }
+},{
+    'name' : 'Rugzak',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 13,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Touw',
+    'amount' : 3,
+    'unit' : 'meter',
+    'price' : {
+        'amount' : 14,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Fakkel',
+    'amount' : 2,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 12,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Waterzak',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 11,
+        'type' : 'silver'
+    }
 }]
-def copper2silver(amount:int) -> float:
-    return amount / 10
-
-def silver2gold(amount:int) -> float:
-    return amount / 5
-
-def copper2gold(amount:int) -> float:
-    return amount / 50
-
-def platinum2gold(amount:int) -> float:
-    return amount * 25
-# print(friends[0]["name"])
-if (adventurerGear[0]["price"]["type"]) == "gold":
-    print(adventurerGear[0]["name"],"staat al in gold!")
-    print("Het kost",adventurerGear[0]["price"]["amount"],"gold!")
-elif (adventurerGear[0]["price"]["type"]) == "silver":
-    print(adventurerGear[0]["name"],"staat in silver!")
-    togold = silver2gold(adventurerGear[0]["price"]["amount"])
-    round(togold, 2)
-    print("In gold is dit:",togold)
-elif (adventurerGear[0]["price"]["type"]) == "copper":
-    print(adventurerGear[0]["name"],"staat in copper!")
-    togold = copper2gold(adventurerGear[0]["price"]["amount"])
-    round(togold, 2)
-    print("In gold is dit:",togold)
