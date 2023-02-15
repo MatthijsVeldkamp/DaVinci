@@ -1,6 +1,11 @@
-speciaal = ("harten","ruiten","klaveren","schoppen")
-kaarten = ("2","3","4","5","6","7","8","9","10","boer","vrouw","heer","aas")
-hallo = "leuke string"
-# for i in (1, 2, 3, 4):
-#     print(i)
-print (hallo[3])
+import random
+spelerskaart = "joker"
+beginkaart = "joker"
+print(beginkaart)
+print(spelerskaart)
+if (spelerskaart.split(' ', 1)[0]) == (beginkaart.split(' ', 1)[0]):
+    print("Actie toegelaten!")
+elif (spelerskaart.split(' ', 1)[1]) == (beginkaart.split(' ', 1)[1]):
+    print("Actie toegelaten!")
+else:
+    print("Actie niet toegelaten!")

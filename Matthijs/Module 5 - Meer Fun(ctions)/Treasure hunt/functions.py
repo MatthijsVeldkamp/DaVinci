@@ -146,25 +146,49 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 ##################### M04.D02.O10 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    people_per_night_gold = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
+    horses_per_night_gold = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
+    return int(leftoverGold / (people_per_night_gold + horses_per_night_gold))
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    gold_per_night = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT)
+    horses_gold_per_night = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT)
+    human_per_night_Gold =  gold_per_night * people 
+    horses_per_night_Gold = horses_gold_per_night * horses 
+    return round((human_per_night_Gold + horses_per_night_Gold) * nightsInInn,2)
 
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
-
-def getAdventurerCut(profitGold:float, investorsCuts:list, people:int) -> float:
-    pass
-    
-
+    investorlist = []
+    for a in investors:
+        if a['profitReturn'] < 10:
+            investorlist.append(round(a['profitReturn'] / 100 * profitGold,2) )
+    return investorlist
+def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:list) -> float:
+    investor_cuts = 0
+    for a in investorsCuts:
+        investor_cuts += a
+    return round((profitGold - investor_cuts) / fellowship,2)
 ##################### M04.D02.O13 #####################
-
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
-
+    people = [mainCharacter] + friends + investors
+    earnings = []
+    # haal de juiste inhoud op
+    adventuringFriends = [friends]
+    interestingInvestors = [investors]
+    adventuringInvestors = [getInterestingInvestors(investors)]
+    investorsCuts = []
+    goldCut = 0.0
+    # verdeel de uitkomsten
+    for person in people:
+        #code aanvullen
+        earnings.append({
+            'name'   : adventuringFriends[0],
+            'start'  : 0.0,
+            'end'    : 0.0
+        })
+    return earnings
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
     vars = map(lambda string, color=color: colored(str(string), color, attrs=['bold']) ,vars)
