@@ -1,4 +1,9 @@
 from functions import *
+from foutmeldingen import *
+from termcolor import colored
 welkom()
-hoeveelbolletjes()
-print(hoeveelbolletjes)
+hoeveel = hoeveelbolletjes()
+welkeverpakking = verpakkingcheck(hoeveel)
+if welkeverpakking == "keuze":
+    welkeverpakking = verpakking(hoeveel)
+kassabon(hoeveel, welkeverpakking)
