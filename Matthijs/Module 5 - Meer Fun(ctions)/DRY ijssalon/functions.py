@@ -2,6 +2,7 @@ from foutmeldingen import *
 import os
 import time
 from termcolor import colored
+vanille = 1.00
 def welkom():
     os.system("cls")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
@@ -50,3 +51,5 @@ def verpakking(hoeveel):
             continue
 def kassabon(hoeveel, verpakking):
     print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).")
+def prijsberekening(hoeveel):
+    pass
