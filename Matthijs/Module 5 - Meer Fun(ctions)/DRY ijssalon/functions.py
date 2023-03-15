@@ -1,7 +1,10 @@
 from foutmeldingen import *
+from prijzen import *
 import os
 import time
 from termcolor import colored
+import math
+aantalbolletjes = 0
 def welkom():
     os.system("cls")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
@@ -49,4 +52,14 @@ def verpakking(hoeveel):
             os.system("cls")
             continue
 def kassabon(hoeveel, verpakking):
-    print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).")
+    if verpakking == "bakje":
+        deprijs = hoeveel * bolletje
+        prijsbakje = hoeveel * bakje
+        totaalprijs = deprijs + prijsbakje
+        print('---------["Papi Gelato"]---------')
+        print(f"Bolletjes: {hoeveel}x {bolletje:.2f} euro = {deprijs:.2f} euro")
+        print(f"{verpakking}:     1x {bakje:.2f} euro")
+        print(f"                         -------")
+        print(f"                  Totaal: {totaalprijs:.2f} euro")
+    else:
+        print(f"Dan krijgt u van mij een hoorntje met {hoeveel} bolletje(s).")

@@ -1,5 +1,6 @@
 from functions import *
 from foutmeldingen import *
+from prijzen import *
 from termcolor import colored
 welkom()
 hoeveel = hoeveelbolletjes()
