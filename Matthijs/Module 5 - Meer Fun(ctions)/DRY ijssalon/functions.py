@@ -6,7 +6,7 @@ from termcolor import colored
 import math
 aantalbolletjes = 0
 def welkom():
-    os.system("cls")
+    os.system("clear")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
 def hoeveelbolletjes():
     while True:
@@ -17,20 +17,20 @@ def hoeveelbolletjes():
             if hoeveel > 8:
                 hebbenweniet()
                 time.sleep(1.5)
-                os.system("cls")
+                os.system("clear")
                 welkom()
                 continue
             elif hoeveel < 1:
                 minimaaleen()
                 time.sleep(1.5)
-                os.system("cls")
+                os.system("clear")
                 continue
             else:
                 return hoeveel
         except:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("cls")
+            os.system("clear")
             welkom()
             continue
 def verpakkingcheck(hoeveel):
@@ -49,7 +49,7 @@ def verpakking(hoeveel):
         else:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("cls")
+            os.system("clear")
             continue
 def kassabon(hoeveel, verpakking):
     if verpakking == "bakje":
