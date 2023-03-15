@@ -54,8 +54,7 @@ def verpakking(hoeveel):
 def kassabon(hoeveel, verpakking):
     if verpakking == "bakje":
         deprijs = hoeveel * bolletje
-        prijsbakje = hoeveel * bakje
-        totaalprijs = deprijs + prijsbakje
+        totaalprijs = deprijs + bakje
         print('---------["Papi Gelato"]---------')
         print(f"Bolletjes: {hoeveel}x {bolletje:.2f} euro = {deprijs:.2f} euro")
         print(f"{verpakking}:     1x {bakje:.2f} euro")
@@ -63,8 +62,3 @@ def kassabon(hoeveel, verpakking):
         print(f"                  Totaal: {totaalprijs:.2f} euro")
     else:
         print(f"Dan krijgt u van mij een hoorntje met {hoeveel} bolletje(s).")
-def prijsberekening(hoeveel):
-    deprijs = hoeveel * vanilleprijs
-    return format(deprijs,'.2f') 
-def kassabon(hoeveel, verpakking,prijs):
-    print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).\nDat kost in totaal € {prijs}.")

@@ -7,5 +7,4 @@ hoeveel = hoeveelbolletjes()
 welkeverpakking = verpakkingcheck(hoeveel)
 if welkeverpakking == "keuze":
     welkeverpakking = verpakking(hoeveel)
-deprijs = prijsberekening(hoeveel)
-kassabon(hoeveel, welkeverpakking,deprijs)
+kassabon(hoeveel, welkeverpakking)
