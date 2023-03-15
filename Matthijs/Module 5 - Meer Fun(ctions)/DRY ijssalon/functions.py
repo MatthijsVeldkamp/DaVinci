@@ -61,4 +61,10 @@ def kassabon(hoeveel, verpakking):
         print(f"                         -------")
         print(f"                  Totaal: {totaalprijs:.2f} euro")
     else:
-        print(f"Dan krijgt u van mij een hoorntje met {hoeveel} bolletje(s).")
+        deprijs = hoeveel * bolletje
+        totaalprijs = deprijs + hoorntje
+        print('---------["Papi Gelato"]---------')
+        print(f"Bolletjes: {hoeveel}x {bolletje:.2f} euro = {deprijs:.2f} euro")
+        print(f"{verpakking}:     1x {hoorntje:.2f} euro")
+        print(f"                         -------")
+        print(f"                  Totaal: {totaalprijs:.2f} euro")
