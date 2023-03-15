@@ -63,3 +63,8 @@ def kassabon(hoeveel, verpakking):
         print(f"                  Totaal: {totaalprijs:.2f} euro")
     else:
         print(f"Dan krijgt u van mij een hoorntje met {hoeveel} bolletje(s).")
+def prijsberekening(hoeveel):
+    deprijs = hoeveel * vanilleprijs
+    return format(deprijs,'.2f') 
+def kassabon(hoeveel, verpakking,prijs):
+    print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).\nDat kost in totaal € {prijs}.")
