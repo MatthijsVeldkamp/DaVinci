@@ -3,12 +3,8 @@ from prijzen import *
 import os
 import time
 from termcolor import colored
-<<<<<<< HEAD
 import math
 aantalbolletjes = 0
-=======
-vanilleprijs = 1.20
->>>>>>> f2610b512ef220d619410c9f0686c233fbfad8fb
 def welkom():
     os.system("cls")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
@@ -55,7 +51,6 @@ def verpakking(hoeveel):
             time.sleep(1.5)
             os.system("cls")
             continue
-<<<<<<< HEAD
 def kassabon(hoeveel, verpakking):
     if verpakking == "bakje":
         deprijs = hoeveel * bolletje
@@ -68,10 +63,3 @@ def kassabon(hoeveel, verpakking):
         print(f"                  Totaal: {totaalprijs:.2f} euro")
     else:
         print(f"Dan krijgt u van mij een hoorntje met {hoeveel} bolletje(s).")
-=======
-def prijsberekening(hoeveel):
-    deprijs = hoeveel * vanilleprijs
-    return format(deprijs,'.2f') 
-def kassabon(hoeveel, verpakking,prijs):
-    print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).\nDat kost in totaal € {prijs}.")
->>>>>>> f2610b512ef220d619410c9f0686c233fbfad8fb
