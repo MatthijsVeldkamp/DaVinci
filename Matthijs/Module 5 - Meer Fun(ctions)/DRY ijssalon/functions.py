@@ -4,6 +4,7 @@ import os
 import time
 from termcolor import colored
 import math
+#test
 aantalbolletjes = 0
 def welkom():
     os.system("clear")
