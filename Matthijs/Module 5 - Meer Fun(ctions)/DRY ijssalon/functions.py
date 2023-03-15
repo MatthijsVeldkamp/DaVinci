@@ -61,6 +61,7 @@ def kassabon(hoeveel, verpakking):
         print(f"{verpakking}:     1x {bakje:.2f} euro")
         print(f"                         -------")
         print(f"                  Totaal: {totaalprijs:.2f} euro")
+        return
     else:
         deprijs = hoeveel * bolletje
         totaalprijs = deprijs + hoorntje
@@ -69,3 +70,19 @@ def kassabon(hoeveel, verpakking):
         print(f"{verpakking}:     1x {hoorntje:.2f} euro")
         print(f"                         -------")
         print(f"                  Totaal: {totaalprijs:.2f} euro")
+        return
+def nogeenkeer():
+    while True:
+        antwoord = input("Wilt u nog een keer bestellen? (y/n) ")
+        if antwoord.lower() == "y":
+            nogeenkeerbestellen = True
+            return nogeenkeerbestellen
+        elif antwoord.lower() == "n":
+            nogeenkeerbestellen = False
+            return nogeenkeerbestellen
+        else:
+            nogeenkeerbestellen = ""
+            datsnapikniet()
+            time.sleep(1.5)
+            os.system("clear")
+            continue
