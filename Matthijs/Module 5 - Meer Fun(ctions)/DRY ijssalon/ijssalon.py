@@ -2,6 +2,7 @@ from functions import *
 from foutmeldingen import *
 from prijzen import *
 from termcolor import colored
+toppings = []
 welkom()
 def addtobestelling():
     if welkeverpakking == "bakje":
@@ -17,12 +18,13 @@ while True:
         welkeverpakking = verpakking(hoeveel)
     smaakkeuze(aantalbolletjes)
     addtobestelling()
+    topping = toppingkeuze(hoeveel, welkeverpakking)
+    toppings.append(topping)
     nogeens = nogeenkeer()
     if nogeens == True:
         continue
     else:
-        kassabon(hoeveel, welkeverpakking)
+        count3()
+        kassabon(hoeveel, welkeverpakking,toppings)
         print(colored("Bedankt en tot ziens!","cyan"))
-        for aantalbolletjes in range(aantalbolletjes):
-            print(f"bolletje {aantalbolletjes+1}: {smaken[aantalbolletjes]}")
         break
