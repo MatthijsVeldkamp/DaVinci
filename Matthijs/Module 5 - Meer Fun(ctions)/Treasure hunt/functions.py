@@ -135,13 +135,12 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     # kosten voor uitrusting
     gearCost = getItemsValueInGold(gear)
 
-    # kosten voor eten
+    # kosten voor etenS
     foodCost = getJourneyFoodCostsInGold(countInvestors, countInvestors)
 
     return round(rentalCost + gearCost + foodCost,2)
 
     
-
 
 ##################### M04.D02.O10 #####################
 

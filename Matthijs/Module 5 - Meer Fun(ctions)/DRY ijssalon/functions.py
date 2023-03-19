@@ -1,8 +1,13 @@
 from foutmeldingen import *
+from prijzen import *
 import os
 import time
 from termcolor import colored
-vanilleprijs = 1.20
+import math
+bestelling = {'Bolletjes': 0,
+              'Bakjes': 0,
+              'Hoorntjes': 0}
+aantalbolletjes = 0
 def welkom():
     os.system("cls")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
@@ -33,6 +38,7 @@ def hoeveelbolletjes():
             continue
 def verpakkingcheck(hoeveel):
     if hoeveel >= 4 and hoeveel <=8:
+        print(f"Hier is uw bakje met {hoeveel} bolletjes.")
         return "bakje"
     elif hoeveel >= 1:
         return "keuze"
@@ -49,8 +55,49 @@ def verpakking(hoeveel):
             time.sleep(1.5)
             os.system("cls")
             continue
-def prijsberekening(hoeveel):
-    deprijs = hoeveel * vanilleprijs
-    return format(deprijs,'.2f') 
-def kassabon(hoeveel, verpakking,prijs):
-    print(f"Dan krijgt u van mij een {verpakking} met {hoeveel} bolletje(s).\nDat kost in totaal € {prijs}.")
+welkesmaken = ["chocola", "aardbei", "munt", "mokka", "walnoot","vanille","meloen","banaan"]
+smaken = []
+def smaakkeuze(aantalbolletjes):
+    for aantalbolletjes in range(aantalbolletjes):
+        while True:
+            smaak = input(f"Welke smaak wilt u voor bolletje {aantalbolletjes+1}? ").lower()
+            # checken of de smaak in de lijst welkesmaken staat
+            if smaak in welkesmaken:
+                smaken.append(smaak)
+                break
+            else:
+                print("Sorry, die smaak hebben we niet.")
+                aantalbolletjes - 1
+                continue
+def kassabon(hoeveel, verpakking):
+    deprijs = bestelling["Bolletjes"] * bolletje
+    prijsbakje = bestelling["Bakjes"] * bakje
+    prijshoorntje = bestelling["Hoorntjes"] * hoorntje
+    totaalprijs = (deprijs + prijsbakje) + (prijshoorntje)
+    os.system("cls")
+    print('---------["Papi Gelato"]---------')
+    print(f"Bolletjes: {bestelling['Bolletjes']}x {bolletje:.2f}       = {deprijs:.2f} euro")
+    if bestelling["Bakjes"] != 0:
+        print(f"Bakjes: {bestelling['Bakjes']}x {bakje:.2f}          = {prijsbakje:.2f} euro")
+    if bestelling["Hoorntjes"] != 0:
+        print(f"Hoorntjes: {bestelling['Hoorntjes']}x {hoorntje:.2f}       = {prijshoorntje:.2f} euro")
+    print(f"---------------------------------")
+    print(f"Totaal:                    {totaalprijs:.2f} euro")
+    return
+def nogeenkeer():
+    while True:
+        antwoord = input("Wilt u nog een keer bestellen? (y/n) ")
+        if antwoord.lower() == "y":
+            nogeenkeerbestellen = True
+            os.system("cls")
+            return nogeenkeerbestellen
+        elif antwoord.lower() == "n":
+            nogeenkeerbestellen = False
+            os.system("cls")
+            return nogeenkeerbestellen
+        else:
+            nogeenkeerbestellen = ""
+            datsnapikniet()
+            time.sleep(1.5)
+            os.system("cls")
+            continue
