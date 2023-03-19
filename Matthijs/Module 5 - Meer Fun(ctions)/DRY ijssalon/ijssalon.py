@@ -15,6 +15,7 @@ while True:
     welkeverpakking = verpakkingcheck(hoeveel)
     if welkeverpakking == "keuze":
         welkeverpakking = verpakking(hoeveel)
+    smaakkeuze(aantalbolletjes)
     addtobestelling()
     nogeens = nogeenkeer()
     if nogeens == True:
@@ -22,4 +23,6 @@ while True:
     else:
         kassabon(hoeveel, welkeverpakking)
         print(colored("Bedankt en tot ziens!","cyan"))
+        for aantalbolletjes in range(aantalbolletjes):
+            print(f"bolletje {aantalbolletjes+1}: {smaken[aantalbolletjes]}")
         break

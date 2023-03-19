@@ -55,6 +55,20 @@ def verpakking(hoeveel):
             time.sleep(1.5)
             os.system("cls")
             continue
+welkesmaken = ["chocola", "aardbei", "munt", "mokka", "walnoot","vanille","meloen","banaan"]
+smaken = []
+def smaakkeuze(aantalbolletjes):
+    for aantalbolletjes in range(aantalbolletjes):
+        while True:
+            smaak = input(f"Welke smaak wilt u voor bolletje {aantalbolletjes+1}? ").lower()
+            # checken of de smaak in de lijst welkesmaken staat
+            if smaak in welkesmaken:
+                smaken.append(smaak)
+                break
+            else:
+                print("Sorry, die smaak hebben we niet.")
+                aantalbolletjes - 1
+                continue
 def kassabon(hoeveel, verpakking):
     deprijs = bestelling["Bolletjes"] * bolletje
     prijsbakje = bestelling["Bakjes"] * bakje
