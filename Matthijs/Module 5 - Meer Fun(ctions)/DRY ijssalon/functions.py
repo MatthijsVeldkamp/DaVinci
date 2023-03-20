@@ -61,6 +61,7 @@ smaken = []
 aantalsmaken = []
 count2 = []
 def toppingkeuze(hoeveel, welkeverpakking):
+    os.system("cls")
     welketopping = input("Welke topping wilt u?\nU kunt kiezen uit: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus.\n? ").lower()
     if welketopping == "a":
         print("U heeft geen topping gekozen.")
@@ -76,12 +77,13 @@ def toppingkeuze(hoeveel, welkeverpakking):
         datsnapikniet()
         time.sleep(1.5)
         os.system("cls")
-        toppingkeuze()
+        detopping = toppingkeuze(hoeveel, welkeverpakking)
+        return detopping
 def smaakkeuze(aantalbolletjes):
-    for aantalbolletjes in range(aantalbolletjes):
+    for aantalbolletjes2 in range(aantalbolletjes):
         while True:
             os.system("cls")
-            smaak = input(f"Welke smaak wilt u voor bolletje {aantalbolletjes+1}\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille of (m)unt.\n? ").lower()
+            smaak = input(f"Welke smaak wilt u voor bolletje ({aantalbolletjes2+1} / {aantalbolletjes})\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille of (m)unt.\n? ").lower()
             # checken of de smaak in de lijst welkesmaken staat
             if smaak in welkesmaken:
                 smaken.append(smaak)
@@ -117,7 +119,6 @@ def kassabon(hoeveel, verpakking,toppings):
     prijshoorntje = bestelling["Hoorntjes"] * hoorntje
     totaalprijs = (deprijs + prijsbakje) + (prijshoorntje) + toppingprijs
     os.system("cls")
-    print(toppings)
     print('---------["Papi Gelato"]---------')
     if count2[0] != 0:
         print(f"B.Chocola: {count2[0]}x {bolletje:.2f}        = {count2[0] * bolletje:.2f} euro")
