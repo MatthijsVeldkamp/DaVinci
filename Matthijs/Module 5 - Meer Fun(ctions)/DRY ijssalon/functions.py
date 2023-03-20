@@ -9,7 +9,7 @@ bestelling = {'Bolletjes': 0,
               'Hoorntjes': 0}
 aantalbolletjes = 0
 def welkom():
-    os.system("cls")
+    os.system("clear")
     print("Welkom bij Papi Gelatto, je mag alle smaken kiezen zolang het maar vanille ijs is.")
 def hoeveelbolletjes():
     while True:
@@ -38,7 +38,6 @@ def hoeveelbolletjes():
             continue
 def verpakkingcheck(hoeveel):
     if hoeveel >= 4 and hoeveel <=8:
-        print(f"Hier is uw bakje met {hoeveel} bolletjes.")
         return "bakje"
     elif hoeveel >= 1:
         return "keuze"
@@ -56,20 +55,24 @@ def verpakking(hoeveel):
             os.system("cls")
             continue
 def kassabon(hoeveel, verpakking):
-    deprijs = bestelling["Bolletjes"] * bolletje
-    prijsbakje = bestelling["Bakjes"] * bakje
-    prijshoorntje = bestelling["Hoorntjes"] * hoorntje
-    totaalprijs = (deprijs + prijsbakje) + (prijshoorntje)
-    os.system("cls")
-    print('---------["Papi Gelato"]---------')
-    print(f"Bolletjes: {bestelling['Bolletjes']}x {bolletje:.2f}       = {deprijs:.2f} euro")
-    if bestelling["Bakjes"] != 0:
-        print(f"Bakjes: {bestelling['Bakjes']}x {bakje:.2f}          = {prijsbakje:.2f} euro")
-    if bestelling["Hoorntjes"] != 0:
-        print(f"Hoorntjes: {bestelling['Hoorntjes']}x {hoorntje:.2f}       = {prijshoorntje:.2f} euro")
-    print(f"---------------------------------")
-    print(f"Totaal:                    {totaalprijs:.2f} euro")
-    return
+    if verpakking == "bakje":
+        deprijs = hoeveel * bolletje
+        totaalprijs = deprijs + bakje
+        print('---------["Papi Gelato"]---------')
+        print(f"Bolletjes: {hoeveel}x {bolletje:.2f} euro = {deprijs:.2f} euro")
+        print(f"{verpakking}:     1x {bakje:.2f} euro")
+        print(f"                         -------")
+        print(f"                  Totaal: {totaalprijs:.2f} euro")
+        return
+    else:
+        deprijs = hoeveel * bolletje
+        totaalprijs = deprijs + hoorntje
+        print('---------["Papi Gelato"]---------')
+        print(f"Bolletjes: {hoeveel}x {bolletje:.2f} euro = {deprijs:.2f} euro")
+        print(f"{verpakking}:     1x {hoorntje:.2f} euro")
+        print(f"                         -------")
+        print(f"                  Totaal: {totaalprijs:.2f} euro")
+        return
 def nogeenkeer():
     while True:
         antwoord = input("Wilt u nog een keer bestellen? (y/n) ")
