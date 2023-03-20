@@ -1,13 +1,3 @@
-#Code van Justin
-from fruitmand import fruitmand
-kleuren = []
-fruitmand.remove({
-    'name' : 'druif',
-    'weight' : 5,
-    'color' : 'red',
-    'round' : True})
-for i in range (len(fruitmand)):
-    kleur = (fruitmand[i]['color'])
-    if kleur not in kleuren:
-        kleuren.append(kleur)
-print (kleuren)
+list = ["appel", "banaan", "kers","peer"]
+for i in range(0, len(list)):
+    print(list[i])
