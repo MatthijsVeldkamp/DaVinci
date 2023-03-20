@@ -4,11 +4,6 @@ from prijzen import *
 from termcolor import colored
 toppings = []
 welkom()
-def addtobestelling():
-    if welkeverpakking == "bakje":
-            bestelling['Bakjes'] += 1
-    elif welkeverpakking == "hoorntje":
-        bestelling['Hoorntjes'] += 1
 while True:
     hoeveel = hoeveelbolletjes()
     aantalbolletjes = hoeveel
@@ -17,7 +12,7 @@ while True:
     if welkeverpakking == "keuze":
         welkeverpakking = verpakking(hoeveel)
     smaakkeuze(aantalbolletjes)
-    addtobestelling()
+    addtobestelling(welkeverpakking)
     topping = toppingkeuze(hoeveel, welkeverpakking)
     toppings.append(topping)
     nogeens = nogeenkeer()

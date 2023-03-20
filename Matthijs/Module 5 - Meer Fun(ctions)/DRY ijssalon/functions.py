@@ -36,6 +36,11 @@ def hoeveelbolletjes():
             os.system("cls")
             welkom()
             continue
+def addtobestelling(welkeverpakking):
+    if welkeverpakking == "bakje":
+            bestelling['Bakjes'] += 1
+    elif welkeverpakking == "hoorntje":
+        bestelling['Hoorntjes'] += 1
 def verpakkingcheck(hoeveel):
     if hoeveel >= 4 and hoeveel <=8:
         print(f"Hier is uw bakje met {hoeveel} bolletjes.")
@@ -61,7 +66,6 @@ smaken = []
 aantalsmaken = []
 count2 = []
 def toppingkeuze(hoeveel, welkeverpakking):
-    os.system("cls")
     welketopping = input("Welke topping wilt u?\nU kunt kiezen uit: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus.\n? ").lower()
     if welketopping == "a":
         print("U heeft geen topping gekozen.")
@@ -77,13 +81,12 @@ def toppingkeuze(hoeveel, welkeverpakking):
         datsnapikniet()
         time.sleep(1.5)
         os.system("cls")
-        detopping = toppingkeuze(hoeveel, welkeverpakking)
-        return detopping
+        toppingkeuze()
 def smaakkeuze(aantalbolletjes):
-    for aantalbolletjes2 in range(aantalbolletjes):
+    for aantalbolletjes in range(aantalbolletjes):
         while True:
             os.system("cls")
-            smaak = input(f"Welke smaak wilt u voor bolletje ({aantalbolletjes2+1} / {aantalbolletjes})\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille of (m)unt.\n? ").lower()
+            smaak = input(f"Welke smaak wilt u voor bolletje {aantalbolletjes+1}\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille of (m)unt.\n? ").lower()
             # checken of de smaak in de lijst welkesmaken staat
             if smaak in welkesmaken:
                 smaken.append(smaak)
