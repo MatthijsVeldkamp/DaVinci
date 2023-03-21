@@ -8,9 +8,47 @@ bestelling = {'Bolletjes': 0,
               'Bakjes': 0,
               'Hoorntjes': 0}
 aantalbolletjes = 0
+def particulierofzakelijk():
+    while True:
+        print(colored("Bent u 1) particulier of 2) zakelijk?","cyan"))
+        welkeklant = input("? ").lower()
+        if welkeklant == "1":
+            return "particulier"
+        elif welkeklant == "2":
+            return "zakelijk"
+        else:
+            datsnapikniet()
+            time.sleep(1.5)
+            os.system("cls")
+            continue
 def welkom():
     os.system("cls")
     print("Welkom bij Papi Gelatto!")
+def hoeveelliter():
+    while True:
+        print(colored("Hoeveel liter wilt u?","cyan"))
+        hoeveel = input("? ")
+        try:
+            hoeveel = int(hoeveel)
+            if hoeveel > 8:
+                hebbenweniet()
+                time.sleep(1.5)
+                os.system("cls")
+                welkom()
+                continue
+            elif hoeveel < 1:
+                minimaaleen()
+                time.sleep(1.5)
+                os.system("cls")
+                continue
+            else:
+                return hoeveel
+        except:
+            datsnapikniet()
+            time.sleep(1.5)
+            os.system("cls")
+            welkom()
+            continue
 def hoeveelbolletjes():
     while True:
         print(colored("Hoeveel bolletjes wilt u?","cyan"))
