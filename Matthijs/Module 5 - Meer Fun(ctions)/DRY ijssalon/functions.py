@@ -81,7 +81,6 @@ def addtobestelling(welkeverpakking):
         bestelling['Hoorntjes'] += 1
 def verpakkingcheck(hoeveel):
     if hoeveel >= 4 and hoeveel <=8:
-        print(f"Hier is uw bakje met {hoeveel} bolletjes.")
         time.sleep(2)
         return "bakje"
     elif hoeveel >= 1:
@@ -104,22 +103,23 @@ smaken = []
 aantalsmaken = []
 count2 = []
 def toppingkeuze(hoeveel, welkeverpakking):
-    welketopping = input("Welke topping wilt u?\nU kunt kiezen uit: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus.\n? ").lower()
-    if welketopping == "a":
-        print("U heeft geen topping gekozen.")
-        time.sleep(2)
-        return
-    elif welketopping == "b":
-        return "slagroom"
-    elif welketopping == "c":
-        return "sprinkels"
-    elif welketopping == "d":
-        return "caramel"
-    else:
-        datsnapikniet()
-        time.sleep(1.5)
-        os.system("cls")
-        toppingkeuze()
+    while True:
+        welketopping = input("Welke topping wilt u?\nU kunt kiezen uit: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus.\n? ").lower()
+        if welketopping == "a":
+            print("U heeft geen topping gekozen.")
+            time.sleep(2)
+            return
+        elif welketopping == "b":
+            return "slagroom"
+        elif welketopping == "c":
+            return "sprinkels"
+        elif welketopping == "d":
+            return "caramel"
+        else:
+            datsnapikniet()
+            time.sleep(1.5)
+            os.system("cls")
+            continue
 def smaakkeuze(aantalbolletjes):
     for aantalbolletjes in range(aantalbolletjes):
         while True:
@@ -182,15 +182,15 @@ def kassabonparticulier(hoeveel, verpakking,toppings):
     if count2[2] != 0:
         print(f"B.Vanille: {count2[2]}x {bolletje:.2f}        = {count2[2] * bolletje:.2f} euro")
     if count2[3] != 0:
-        print(f"B.Munt: {count2[3]}x {bolletje:.2f}        = {count2[3] * bolletje:.2f} euro")
+        print(f"B.Munt: {count2[3]}x {bolletje:.2f}           = {count2[3] * bolletje:.2f} euro")
     if toppings != [None]:
-        print(f"Topping:                 = {toppingprijs:.2f} euro")
+        print(f"Topping:                  = {toppingprijs:.2f} euro")
     if bestelling["Bakjes"] != 0:
-        print(f"Bakjes: {bestelling['Bakjes']}x {bakje:.2f}          = {prijsbakje:.2f} euro")
+        print(f"Bakjes: {bestelling['Bakjes']}x {bakje:.2f}           = {prijsbakje:.2f} euro")
     if bestelling["Hoorntjes"] != 0:
         print(f"Hoorntjes: {bestelling['Hoorntjes']}x {hoorntje:.2f}       = {prijshoorntje:.2f} euro")
     print(f"---------------------------------")
-    print(f"Totaal:                    {totaalprijs:.2f} euro")
+    print(f"Totaal:                     {totaalprijs:.2f} euro")
     return
 def kassabonzakelijk(hoeveel):
     deprijs = bestelling["Bolletjes"] * perliter
