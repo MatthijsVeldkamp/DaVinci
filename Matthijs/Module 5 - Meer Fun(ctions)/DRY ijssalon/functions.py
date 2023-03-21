@@ -134,6 +134,20 @@ def smaakkeuze(aantalbolletjes):
                 aantalbolletjes - 1
                 time.sleep(1.5)
                 continue
+def smaakkeuzezakelijk(aantalbolletjes):
+    while True:
+        os.system("cls")
+        smaak = input(f"Welke smaak wilt u?\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille of (m)unt.\n? ").lower()
+        # checken of de smaak in de lijst welkesmaken staat
+        if smaak in welkesmaken:
+            for aantalbolletjes in range(aantalbolletjes):
+                smaken.append(smaak)
+            break
+        else:
+            print("Sorry, die smaak hebben we niet.")
+            aantalbolletjes - 1
+            time.sleep(1.5)
+            continue
 def count3():
     countsmaak = smaken.count("c")
     count2.append(countsmaak)
@@ -143,7 +157,7 @@ def count3():
     count2.append(countsmaak)
     countsmaak = smaken.count("m")
     count2.append(countsmaak)
-def kassabon(hoeveel, verpakking,toppings):
+def kassabonparticulier(hoeveel, verpakking,toppings):
     toppingprijs = 0
     for topping in range(len(toppings)):
         if toppings[topping] == "slagroom":
@@ -177,6 +191,26 @@ def kassabon(hoeveel, verpakking,toppings):
         print(f"Hoorntjes: {bestelling['Hoorntjes']}x {hoorntje:.2f}       = {prijshoorntje:.2f} euro")
     print(f"---------------------------------")
     print(f"Totaal:                    {totaalprijs:.2f} euro")
+    return
+def kassabonzakelijk(hoeveel):
+    deprijs = bestelling["Bolletjes"] * perliter
+    totaalprijs = deprijs
+    btw = (totaalprijs / 109) * 100
+    os.system("cls")
+    print('---------["Papi Gelato"]---------')
+    if count2[0] != 0:
+        print(f"L.Chocola: {count2[0]}x {perliter:.2f}        = {count2[0] * perliter:.2f} euro")
+    if count2[1] != 0:
+        print(f"L.Aardbei: {count2[1]}x {perliter:.2f}        = {count2[1] * perliter:.2f} euro")
+    if count2[2] != 0:
+        print(f"L.Vanille: {count2[2]}x {perliter:.2f}        = {count2[2] * perliter:.2f} euro")
+    if count2[3] != 0:
+        print(f"L.Munt:    {count2[3]}x {perliter:.2f}        = {count2[3] * perliter:.2f} euro")
+    if bestelling["Hoorntjes"] != 0:
+        print(f"Hoorntjes: {bestelling['Hoorntjes']}x {hoorntje:.2f}       = {perliter:.2f} euro")
+    print(f"---------------------------------")
+    print(f"Totaal:                    {totaalprijs:.2f} euro")
+    print(f"BTW (9%):             {round((totaalprijs - btw),2)} euro")
     return
 def nogeenkeer():
     while True:
