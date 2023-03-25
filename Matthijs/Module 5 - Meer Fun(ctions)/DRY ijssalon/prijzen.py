@@ -1,4 +1,4 @@
-bolletje = 1.10
+bolletje = 0.95
 hoorntje = 1.25
 bakje = 0.75
 slagroom = 0.50
