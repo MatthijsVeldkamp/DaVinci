@@ -19,10 +19,10 @@ def particulierofzakelijk():
         else:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             continue
 def welkom():
-    os.system("clear")
+    os.system("cls")
     print("Welkom bij Papi Gelatto!")
 def hoeveelliter():
     while True:
@@ -33,20 +33,20 @@ def hoeveelliter():
             if hoeveel > 8:
                 hebbenweniet()
                 time.sleep(1.5)
-                os.system("clear")
+                os.system("cls")
                 welkom()
                 continue
             elif hoeveel < 1:
                 minimaaleen()
                 time.sleep(1.5)
-                os.system("clear")
+                os.system("cls")
                 continue
             else:
                 return hoeveel
         except:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             welkom()
             continue
 def hoeveelbolletjes():
@@ -58,20 +58,20 @@ def hoeveelbolletjes():
             if hoeveel > 8:
                 hebbenweniet()
                 time.sleep(1.5)
-                os.system("clear")
+                os.system("cls")
                 welkom()
                 continue
             elif hoeveel < 1:
                 minimaaleen()
                 time.sleep(1.5)
-                os.system("clear")
+                os.system("cls")
                 continue
             else:
                 return hoeveel
         except:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             welkom()
             continue
 def addtobestelling(welkeverpakking):
@@ -96,7 +96,7 @@ def verpakking(hoeveel):
         else:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             continue
 welkesmaken = ["c", "a","v"]
 smaken = []
@@ -118,12 +118,12 @@ def toppingkeuze(hoeveel, welkeverpakking):
         else:
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             continue
 def smaakkeuze(aantalbolletjes):
     for aantalbolletjes in range(aantalbolletjes):
         while True:
-            os.system("clear")
+            os.system("cls")
             smaak = input(f"Welke smaak wilt u voor bolletje {aantalbolletjes+1}\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille.\n? ").lower()
             # checken of de smaak in de lijst welkesmaken staat
             if smaak in welkesmaken:
@@ -136,7 +136,7 @@ def smaakkeuze(aantalbolletjes):
                 continue
 def smaakkeuzezakelijk(aantalbolletjes):
     while True:
-        os.system("clear")
+        os.system("cls")
         smaak = input(f"Welke smaak wilt u?\nU kunt kiezen uit: (c)hocola, (a)ardbei, (v)anille.\n? ").lower()
         # checken of de smaak in de lijst welkesmaken staat
         if smaak in welkesmaken:
@@ -173,7 +173,7 @@ def kassabonparticulier(hoeveel, verpakking,toppings):
     prijsbakje = bestelling["Bakjes"] * bakje
     prijshoorntje = bestelling["Hoorntjes"] * hoorntje
     totaalprijs = (deprijs + prijsbakje) + (prijshoorntje) + toppingprijs
-    os.system("clear")
+    os.system("cls")
     print('---------["Papi Gelato"]---------')
     if count2[0] != 0:
         print(f"B.Chocola: {count2[0]}x {bolletje:.2f}        = {count2[0] * bolletje:.2f} euro")
@@ -196,7 +196,7 @@ def kassabonzakelijk(hoeveel):
     deprijs = bestelling["Bolletjes"] * perliter
     totaalprijs = deprijs
     btw = (totaalprijs / 106) * 100
-    os.system("clear")
+    os.system("cls")
     print('---------["Papi Gelato"]---------')
     if count2[0] != 0:
         print(f"L.Chocola: {count2[0]}x {perliter:.2f}        = {count2[0] * perliter:.2f} euro")
@@ -217,15 +217,15 @@ def nogeenkeer():
         antwoord = input("Wilt u nog een keer bestellen? (y/n) ")
         if antwoord.lower() == "y":
             nogeenkeerbestellen = True
-            os.system("clear")
+            os.system("cls")
             return nogeenkeerbestellen
         elif antwoord.lower() == "n":
             nogeenkeerbestellen = False
-            os.system("clear")
+            os.system("cls")
             return nogeenkeerbestellen
         else:
             nogeenkeerbestellen = ""
             datsnapikniet()
             time.sleep(1.5)
-            os.system("clear")
+            os.system("cls")
             continue
