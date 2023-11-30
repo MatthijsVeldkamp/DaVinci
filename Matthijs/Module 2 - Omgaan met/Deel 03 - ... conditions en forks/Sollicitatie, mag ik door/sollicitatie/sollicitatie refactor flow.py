@@ -4,6 +4,7 @@ print("Welkom, u gaat een aantal vragen beantwoorden. Hierna ziet u of u mag sol
 naam = vraag("Wat is je naam?")
 print(f"Welkom {naam}")
 gender = None
+
 while gender == None:
     gender = vraag_met_list("Bent u een man of vrouw?",["man","vrouw","m","v"])
 
@@ -33,7 +34,7 @@ while True:
 
 while True:
     diploma = vraag_met_list("Heeft u een MBO-4 diploma ondernemen?",["ja","nee"])
-    if diploma == None:
+    if diploma == "nee":
         errors.append("U heeft geen MBO-4 diploma ondernemen.")
         break
     elif diploma != None and diploma != "error":
@@ -41,7 +42,7 @@ while True:
 
 while True:
     certificaat = vraag_met_list("Heeft u het certificaat overleven met gevaarlijk personeel?",["ja","nee"])
-    if certificaat == None:
+    if certificaat == "nee":
         errors.append("U heeft geen certificaat overleven met gevaarlijk personeel.")
         break
     elif certificaat != None and certificaat != "error":
@@ -49,7 +50,7 @@ while True:
 
 while True:
     rijbewijs = vraag_met_list("Heeft u een geldig vrachtwagen rijbewijs?",["ja","nee"])
-    if rijbewijs == None:
+    if rijbewijs == "nee":
         errors.append("U heeft geen geldig vrachtwagen rijbewijs.")
         break
     elif rijbewijs != None and rijbewijs != "error":
@@ -57,7 +58,7 @@ while True:
 
 while True:
     hoed = vraag_met_list("Heeft u een hoge hoed?",["ja","nee"])
-    if hoed == None:
+    if hoed == "nee":
         errors.append("U heeft geen hoge hoed.")
         break
     elif hoed != None:
