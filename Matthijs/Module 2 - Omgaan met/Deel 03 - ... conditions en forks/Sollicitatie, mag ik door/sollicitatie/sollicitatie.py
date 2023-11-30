@@ -1,7 +1,6 @@
 import os
 import time
-x = True
-while x == True:
+while True:
     errors = []
     os.system('cls')
     print("Wat is uw naam?")
@@ -16,34 +15,37 @@ while x == True:
     print("|          veel Succes!                  |")
     print("|                                        |")
     print("------------------------------------------")
-    os.system('cls')
-    gender = str(input("Bent u een man of vrouw? "))
-    if gender.lower() == "man":
-        geslacht = 1
-    elif gender.lower() == "vrouw":
-        geslacht = 2    
-    else:
-        print("Er ging iets fout.")
-        break
+    while True:
+        os.system('cls')
+        gender = str(input("Bent u een man of vrouw? ")).lower()
+        if gender.lower() == "man":
+            geslacht = 1
+            break
+        elif gender.lower() == "vrouw":
+            geslacht = 2
+            break
+        else:
+            print("Er ging iets fout.")
+            time.sleep(1)
     check = 0
-    print("Hoeveel jaar praktijkervaring heeft u met dieren-dressuur?")
-    praktijk = input("? ")
     print("Hoeveel jaar ervaring heeft u met jongleren?")
     jongleren = input("? ")
-    print("Hoeveel jaar praktijkervaring heeft u met acrobatiek?")
-    acrobatiek = input("? ")
-    acrobatiekfloat = float(acrobatiek)
     jonglerenfloat = float(jongleren)
-    praktijkfloat = float(praktijk)
-    if praktijkfloat > 4:
-        check += 1
-    elif acrobatiekfloat > 3:
-        check += 1
-    elif jonglerenfloat > 5:
+    if jonglerenfloat > 5:
         check += 1
     else:
         check += 0
-        errors.append("U heeft te weinig ervaring met acrobatiek, jongleren of dieren-dressuur.")
+        errors.append("U heeft te weinig ervaring met jongleren.")
+    print("Hoeveel jaar praktijkervaring heeft u met acrobatiek?")
+    acrobatiek = input("? ")
+    acrobatiekfloat = float(acrobatiek)
+    if acrobatiekfloat > 3:
+        check += 1
+    else:
+        errors.append("U heeft te weinig ervaring met acrobatiek.")
+
+    print("Hoeveel jaar praktijkervaring heeft u met dieren-dressuur?")
+    praktijk = input("? ")
     floatpraktijk = float(praktijk)
     if floatpraktijk > 4:
         check += 1
@@ -118,11 +120,12 @@ while x == True:
     print("Wat is uw gewicht in hele kg?")
     kilo = input("? ")
     floatkilo = float(kilo)
-    if floatkilo > 90:
+    if floatkilo >= 90 and floatkilo <= 120:
         check += 1
         
     else:
         check += 0
+        errors.append("U gewicht voldoet niet.")
     print("Wat is uw lengte in hele cm?")
     lengte = input("? ")
     floatlengte = float(lengte)
@@ -133,7 +136,7 @@ while x == True:
         check += 0
         errors.append("U bent te klein.")
 
-    if check == 9:
+    if check == 9 and len(errors) == 0:
         os.system('cls')
         print("-------------------------------------------")
         print("|            Gefeliciteerd!               |")
@@ -146,7 +149,7 @@ while x == True:
         break
     else:
         os.system('cls')
-        print("Helaaas, u mag niet solliciteren. U heeft niet aan alle eisen voldaan\nen u heeft de volgende fouten gemaakt:")
+        print("Helaas, u mag niet solliciteren. U heeft niet aan alle eisen voldaan\nen u heeft de volgende fouten gemaakt:")
         for i in errors:
             print(i)
         time.sleep(5)
